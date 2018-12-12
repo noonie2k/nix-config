@@ -49,6 +49,13 @@ in
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
+
+    redshift = {
+      enable = true;
+
+      latitude = "51.18";
+      longitude = "-114.41";
+    };
   };
 
   xdg = {
