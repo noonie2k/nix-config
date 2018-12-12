@@ -1,6 +1,9 @@
 pkgs: epkgs: with epkgs;
 [
   atomic-chrome
+  cider
+  clojure-mode
+  coffee-mode
   company
   company-terraform
   counsel
@@ -13,6 +16,7 @@ pkgs: epkgs: with epkgs;
   magit
   nix-mode
   paredit
+  poly-erb
   projectile
   rainbow-delimiters
   rbenv
