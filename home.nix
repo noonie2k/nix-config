@@ -1,9 +1,18 @@
 { pkgs, ... }:
 
 let
-  home_directory = builtins.getEnv "Home";
-in
-  rec {
+  homeDirectory = builtins.getEnv "Home";
+  emacsPackages = import ./emacs.nix pkgs;
+in rec {
+  manual.manpages.enable = true;
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
+
   home = {
     packages = [
       pkgs.gnupg
@@ -16,6 +25,12 @@ in
   };
 
   programs = {
+    emacs = {
+      enable = true;
+
+      extraPackages = emacsPackages;
+    };
+
     git = {
       enable = true;
 
@@ -61,8 +76,8 @@ in
   xdg = {
     enable = true;
 
-    configHome = "${home_directory}/.config";
-    dataHome   = "${home_directory}/.local/share";
-    cacheHome  = "${home_directory}/.cache";
+    configHome = "${homeDirectory}/.config";
+    dataHome   = "${homeDirectory}/.local/share";
+    cacheHome  = "${homeDirectory}/.cache";
   };
 }
