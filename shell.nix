@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  home.packages = [
+    pkgs.silver-searcher
+  ];
   programs = {
     bash = {
       enable = true;
