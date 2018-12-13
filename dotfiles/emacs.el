@@ -243,10 +243,18 @@
 ;;;;;;;;;;;;;;
 
 ;;
+;; Documentation
+;;
+(use-package eldoc
+  :hook (prog-mode . eldoc-mode))
+
+;;
 ;; ReST Client
 ;;
 (use-package restclient
-  :mode ("\\.http\\'" . restclient-mode))
+  :mode ("\\.http\\'" . restclient-mode)
+  :config
+  (setq-default restclient-inhibit-cookies t))
 
 ;;
 ;; Which Key

@@ -8,7 +8,7 @@
     bash = {
       enable = true;
 
-      historyFile = "$HOME/.config/bash_history";
+      historyFile = "$HOME/.config/bash/history";
       historyControl = [
         "erasedups"
         "ignorespace"
