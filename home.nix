@@ -6,6 +6,7 @@
   imports = [
     ./desktop.nix
     ./emacs.nix
+    ./shell.nix
   ];
 
   nixpkgs = {
