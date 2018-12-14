@@ -35,6 +35,10 @@
     };
   };
 
+  xdg = {
+    enable = true;
+  };
+
   services = {
     gpg-agent = {
       enable = true;
@@ -42,13 +46,5 @@
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
-  };
-
-  xdg = {
-    enable = true;
-
-    configHome = "/home/adam/.config";
-    dataHome   = "/home/adam/.local/share";
-    cacheHome  = "/home/adam/.cache";
   };
 }

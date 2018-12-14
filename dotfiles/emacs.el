@@ -17,7 +17,6 @@
 ;; Defaults
 (setq-default fill-column 80
 	          indent-tabs-mode nil
-	          org-src-tab-acts-natively t
 	          tab-width 4)
 
 ;;;;;;;;;;;;;;;;
@@ -247,6 +246,13 @@
 ;;
 (use-package eldoc
   :hook (prog-mode . eldoc-mode))
+
+;;
+;; Org Mode
+;;
+(load-file (expand-file-name
+            "org-mode.el"
+            user-emacs-directory))
 
 ;;
 ;; ReST Client

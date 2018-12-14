@@ -4,6 +4,7 @@
   home = {
     file = {
       ".emacs.d/init.el".source = ./dotfiles/emacs.el;
+      ".emacs.d/org-mode.el".source = ./dotfiles/org-mode.el;
     };
   };
 
@@ -27,6 +28,9 @@
         ivy
         magit
         nix-mode
+        org
+        org-bullets
+        org-plus-contrib
         paredit
         projectile
         rainbow-delimiters
@@ -34,6 +38,7 @@
         robe
         swiper
         terraform-mode
+        toc-org
         which-key
         yasnippet
         yasnippet-snippets

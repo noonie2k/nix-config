@@ -1,0 +1,93 @@
+# Local Variables:
+# eval: (add-hook 'after-save-hook (lambda () (org-babel-tangle)) nil t)
+# End:
+
+#+TITLE: My Org Mode Config
+#+AUTHOR: Adam Noon <adam.ian.noon@gmail.com>
+
+* Contents                                                              :TOC:
+- [[#configuration][Configuration]]
+  - [[#activation][Activation]]
+  - [[#appearance][Appearance]]
+  - [[#agenda][Agenda]]
+  - [[#default-directories][Default Directories]]
+  - [[#source-blocks][Source Blocks]]
+  - [[#packages][Packages]]
+
+* Configuration
+:PROPERTIES:
+:header-args: :tangle org-mode.el
+:END:
+** Activation
+Ensure Org is active.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'use-package)
+  (use-package org
+    :mode ("\\.org\\'" . org-mode))
+#+END_SRC
+
+** Appearance
+*** Indent Mode
+Automatically indent for consistency.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook 'org-indent-mode)
+#+END_SRC
+
+*** Visual Line Mode
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook 'visual-line-mode)
+#+END_SRC
+
+** Agenda
+Set up the main key bind for accessing Agenda and ensure the agenda files are set.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-agenda
+    :bind ("C-c a" . org-agenda))
+#+END_SRC
+
+** Default Directories
+Ensure that common directories are being used.
+
+#+BEGIN_SRC emacs-lisp
+  (setq-default org-directory (expand-file-name "~/org")
+                org-default-notes-file (expand-file-name "inbox.org" org-directory)
+                org-agenda-files '(org-directory))
+#+END_SRC
+
+** Source Blocks
+Define the languages that can be executed.
+
+#+BEGIN_SRC emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp t)
+     (org . t)
+     (shell . t)))
+#+END_SRC
+
+*** Fontification
+#+BEGIN_SRC emacs-lisp
+  (setq org-src-fontify-natively t
+        org-src-tab-acts-natively t)
+#+END_SRC
+
+*** Evaluation
+Inhibit the evaluation of source blocks during export
+#+BEGIN_SRC emacs-lisp
+  (setq org-export-babel-evaluate nil)
+#+END_SRC
+
+** Packages
+*** Table of Contents
+This will automatically generate a table of contents when the file is saved
+at the first heading with a =TOC= label.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package toc-org
+    :hook (org-mode . toc-org-enable))
+#+END_SRC
+    
+    
