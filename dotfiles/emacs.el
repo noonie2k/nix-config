@@ -143,6 +143,9 @@
 ;;
 ;; Parens
 ;;
+(use-package elec-pair
+  :hook (prog-mode . electric-pair-mode))
+
 (use-package paredit
   :hook ((emacs-lisp-mode . paredit-mode)
          (clojure-mode . paredit-mode)))
