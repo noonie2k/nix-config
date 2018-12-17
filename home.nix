@@ -22,9 +22,6 @@
     };
 
     packages = with pkgs; [
-      gcc
-      gnumake
-      gnupg
       go
       htop
       leiningen
