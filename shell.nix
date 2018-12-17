@@ -14,6 +14,7 @@
         "ignorespace"
       ];
       sessionVariables = {
+        PATH = "$HOME/go/bin:$PATH";
         EDITOR = "${pkgs.emacs}/bin/emacsclient -a nano";
       };
     };

@@ -18,12 +18,14 @@
         clojure-mode
         coffee-mode
         company
+        company-go
         company-terraform
         counsel
         counsel-projectile
         diminish
         expand-region
         flycheck
+        go-eldoc
         go-mode
         ivy
         magit

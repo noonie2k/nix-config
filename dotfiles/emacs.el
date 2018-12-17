@@ -217,6 +217,22 @@
 (use-package coffee-mode)
 
 ;;
+;; Go
+;;
+(use-package company-go
+  :config
+  (add-to-list 'company-backends 'company-go))
+
+(use-package go-eldoc
+  :hook (go-mode . go-eldoc-setup))
+
+(use-package go-mode
+  :bind ("M-." . godef-jump)
+  :hook (before-save . gofmt-before-save)
+  :config
+  (add-to-list 'exec-path (expand-file-name "~/go/bin")))
+
+;;
 ;; Nix
 ;;
 (use-package nix-mode
