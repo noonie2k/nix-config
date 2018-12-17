@@ -17,14 +17,25 @@
   };
 
   home = {
-    packages = [
-      pkgs.gnupg
-      pkgs.htop
-      pkgs.leiningen
+    file = {
+      ".gemrc".text = ''gem: --user-install'';
+    };
+
+    packages = with pkgs; [
+      gcc
+      gnumake
+      gnupg
+      go
+      htop
+      leiningen
     ];
   };
 
   programs = {
+    direnv = {
+      enable = true;
+    };
+
     git = {
       enable = true;
 
