@@ -6,6 +6,7 @@
       pkgs.chromium
       pkgs.firefox
       pkgs.slack
+      pkgs.zoom-us
     ];
   };
 
