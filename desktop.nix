@@ -3,7 +3,9 @@
 {
   home = {
     packages = [
+      pkgs.chromium
       pkgs.firefox
+      pkgs.slack
     ];
   };
 
