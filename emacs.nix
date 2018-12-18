@@ -23,6 +23,7 @@
         counsel
         counsel-projectile
         diminish
+        direnv
         expand-region
         flycheck
         go-eldoc

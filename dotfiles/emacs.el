@@ -217,6 +217,11 @@
 (use-package coffee-mode)
 
 ;;
+;; Direnv
+;;
+(use-package direnv)
+
+;;
 ;; Go
 ;;
 (use-package company-go
