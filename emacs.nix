@@ -37,7 +37,6 @@
         paredit
         projectile
         rainbow-delimiters
-        rbenv
         robe
         swiper
         terraform-mode
