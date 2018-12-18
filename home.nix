@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
-{
+let
+  home_directory = builtins.getEnv "HOME";
+
+in rec {
   manual.manpages.enable = true;
 
   imports = [
@@ -29,6 +32,12 @@
   };
 
   programs = {
+    home-manager = {
+      enable = true;
+
+      path = "${xdg.configHome}/nixpkgs/vendor/home-manager";
+    };
+
     direnv = {
       enable = true;
     };
@@ -45,6 +54,8 @@
 
   xdg = {
     enable = true;
+
+    configHome = "${home_directory}/.config";
   };
 
   services = {
