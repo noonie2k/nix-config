@@ -28,6 +28,7 @@
         flycheck
         go-eldoc
         go-mode
+        golden-ratio
         ivy
         magit
         nix-mode

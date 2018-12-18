@@ -71,6 +71,17 @@
 (tooltip-mode -1)
 
 ;;
+;; Golden Ratio
+;;
+(use-package golden-ratio
+  :diminish
+  :hook (prog-mode . golden-ratio-mode)
+  :config
+  (define-advice select-window (:after (window &optional no-record) golden-ratio-resize-window)
+    (golden-ratio)
+    nil))
+
+;;
 ;; Theme
 ;;
 (use-package zerodark-theme
