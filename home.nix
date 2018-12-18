@@ -26,6 +26,7 @@ in rec {
 
     packages = with pkgs; [
       go
+      gnupg
       htop
       leiningen
     ];
