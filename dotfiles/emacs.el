@@ -9,6 +9,9 @@
       package-enable-at-startup nil)
 (package-initialize)
 
+;; Ensure use-package is loaded
+(require 'use-package)
+
 ;; Customize System
 (setq custom-file (expand-file-name "customize.el" user-emacs-directory))
 (if (file-exists-p custom-file)
