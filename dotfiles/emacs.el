@@ -252,6 +252,11 @@
   (add-to-list 'exec-path (expand-file-name "~/go/bin")))
 
 ;;
+;; Nginx
+;;
+(use-package nginx-mode)
+
+;;
 ;; Nix
 ;;
 (use-package nix-mode
@@ -274,6 +279,11 @@
 
 (use-package company-terraform
   :hook (terraform-mode . company-terraform-init))
+
+;;
+;; Yaml
+;;
+(use-package yaml-mode)
 
 ;;;;;;;;;;;;;;
 ;; Features ;;

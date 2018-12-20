@@ -29,8 +29,10 @@
         go-eldoc
         go-mode
         golden-ratio
+        highlight-indent-guides
         ivy
         magit
+        nginx-mode
         nix-mode
         org
         org-bullets
@@ -38,19 +40,19 @@
         paredit
         projectile
         rainbow-delimiters
+        rainbow-mode
+        restclient
         robe
         swiper
         terraform-mode
         toc-org
+        use-package
         which-key
+        yaml-mode
         yasnippet
         yasnippet-snippets
         yatemplate
         zerodark-theme
-        highlight-indent-guides
-        restclient
-        use-package
-        rainbow-mode
       ];
     };
   };
