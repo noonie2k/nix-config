@@ -249,7 +249,9 @@
   :bind ("M-." . godef-jump)
   :hook (before-save . gofmt-before-save)
   :config
-  (add-to-list 'exec-path (expand-file-name "~/go/bin")))
+  (progn
+    (setq gofmt-command "goimports")
+    (add-to-list 'exec-path (expand-file-name "~/go/bin"))))
 
 ;;
 ;; Nginx
