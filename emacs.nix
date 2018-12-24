@@ -24,6 +24,7 @@
         counsel-projectile
         diminish
         direnv
+        dockerfile-mode
         expand-region
         flycheck
         go-eldoc

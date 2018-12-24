@@ -292,6 +292,11 @@
 ;;;;;;;;;;;;;;
 
 ;;
+;; Docker
+;;
+(use-package dockerfile-mode)
+
+;;
 ;; Documentation
 ;;
 (use-package eldoc
